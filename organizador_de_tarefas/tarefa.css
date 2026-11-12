@@ -1,0 +1,389 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #06111f;
+    --painel: #0d1d30;
+    --borda: #24415f;
+    --azul: #19baff;
+    --texto: #f1f6fc;
+    --texto-suave: #9fb2c8;
+    --verde: #35d39a;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: radial-gradient(circle at top left, #102b49 0, var(--fundo) 45%);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: 100%;
+    max-width: 760px;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.etiqueta {
+    color: var(--azul);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.topo h1 {
+    margin: 8px 0;
+    font-size: clamp(32px, 6vw, 46px);
+}
+
+.topo h1 span {
+    color: var(--azul);
+}
+
+.topo p {
+    color: var(--texto-suave);
+    font-size: 15px;
+}
+
+.resumo {
+    min-width: 105px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    background: #0c2036;
+}
+
+.resumo strong {
+    color: var(--azul);
+    font-size: 28px;
+}
+
+.resumo span {
+    color: var(--texto-suave);
+    font-size: 11px;
+}
+
+.painel {
+    padding: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    background: linear-gradient(145deg, #10243b, #0a192b);
+    box-shadow: 0 18px 50px #00000030;
+}
+
+.form-tarefa {
+    display: flex;
+    gap: 10px;
+}
+
+.form-tarefa input,
+.dialog-edicao input {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 15px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    outline: none;
+    background: #071525;
+    color: var(--texto);
+}
+
+.form-tarefa input:focus,
+.dialog-edicao input:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px #19baff20;
+}
+
+.form-tarefa input::placeholder {
+    color: #71869d;
+}
+
+.btn-adicionar {
+    padding: 0 19px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--azul);
+    color: #031321;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: .2s;
+}
+
+.btn-adicionar:hover {
+    background: #70d8ff;
+    transform: translateY(-1px);
+}
+
+.barra-filtros {
+    display: flex;
+    gap: 8px;
+    margin: 23px 0 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #203951;
+}
+
+.filtro {
+    padding: 8px 13px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.filtro:hover {
+    color: var(--texto);
+    background: #172d46;
+}
+
+.filtro.ativo {
+    border-color: #17618a;
+    background: #103653;
+    color: var(--azul);
+}
+
+.linha-resumo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.btn-texto {
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+    color: var(--azul);
+    font-size: 12px;
+}
+
+.btn-texto:hover {
+    text-decoration: underline;
+}
+
+.lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    list-style: none;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    border: 1px solid #203b56;
+    border-radius: 11px;
+    background: #0a1a2c;
+}
+
+.tarefa input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: var(--verde);
+    cursor: pointer;
+}
+
+.descricao-tarefa {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-size: 14px;
+}
+
+.tarefa.concluida .descricao-tarefa {
+    color: #8296aa;
+    text-decoration: line-through;
+}
+
+.acoes-tarefa {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-acao {
+    padding: 7px 9px;
+    border: 1px solid #294762;
+    border-radius: 7px;
+    background: #142b43;
+    color: #c8d7e7;
+    font-size: 12px;
+}
+
+.btn-acao:hover {
+    border-color: var(--azul);
+    color: var(--azul);
+}
+
+.btn-excluir:hover {
+    border-color: #f07878;
+    color: #ff9292;
+}
+
+.estado-vazio {
+    padding: 35px 15px 25px;
+    text-align: center;
+}
+
+.estado-vazio[hidden] {
+    display: none;
+}
+
+.icone-vazio {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 13px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #103653;
+    color: var(--azul);
+    font-size: 24px;
+}
+
+.estado-vazio h2 {
+    margin-bottom: 6px;
+    font-size: 17px;
+}
+
+.estado-vazio p {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+    color: #71869d;
+    font-size: 12px;
+}
+
+footer strong {
+    color: #b9cadd;
+}
+
+/* JANELA DE EDIÇÃO */
+
+.dialog-edicao {
+    width: min(420px, calc(100% - 30px));
+    margin: auto;
+    padding: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    background: var(--painel);
+    color: var(--texto);
+}
+
+.dialog-edicao::backdrop {
+    background: #000000a8;
+}
+
+.dialog-edicao h2 {
+    margin-bottom: 18px;
+}
+
+.dialog-edicao label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.acoes-dialogo {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.btn-cancelar {
+    padding: 11px 15px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    background: transparent;
+    color: var(--texto);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 560px) {
+    body {
+        padding: 25px 12px;
+    }
+
+    .topo {
+        align-items: flex-start;
+    }
+
+    .topo p {
+        max-width: 220px;
+    }
+
+    .resumo {
+        min-width: 82px;
+        padding: 11px 8px;
+    }
+
+    .painel {
+        padding: 16px;
+    }
+
+    .form-tarefa {
+        flex-direction: column;
+    }
+
+    .btn-adicionar {
+        min-height: 45px;
+    }
+
+    .linha-resumo {
+        align-items: flex-start;
+    }
+
+    .tarefa {
+        flex-wrap: wrap;
+    }
+
+    .acoes-tarefa {
+        margin-left: 30px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}

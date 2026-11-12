@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora Web</title>
+
+    <link rel="stylesheet" href="calculadora.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="calculadora">
+
+            <div class="cabecalho">
+                <h1>Calculadora</h1>
+                <p>Calculadora Web</p>
+            </div>
+
+            <div class="visor">
+                <div id="operacao" class="operacao"></div>
+                <div id="resultado" class="resultado">0</div>
+            </div>
+
+            <div class="botoes">
+
+                <button class="especial" data-action="clear">AC</button>
+                <button class="especial" data-action="delete">DEL</button>
+                <button class="especial" data-action="percent">%</button>
+                <button class="operador" data-operator="/">÷</button>
+
+                <button data-number="7">7</button>
+                <button data-number="8">8</button>
+                <button data-number="9">9</button>
+                <button class="operador" data-operator="*">×</button>
+
+                <button data-number="4">4</button>
+                <button data-number="5">5</button>
+                <button data-number="6">6</button>
+                <button class="operador" data-operator="-">−</button>
+
+                <button data-number="1">1</button>
+                <button data-number="2">2</button>
+                <button data-number="3">3</button>
+                <button class="operador" data-operator="+">+</button>
+
+                <button class="zero" data-number="0">0</button>
+                <button data-number=".">.</button>
+                <button class="igual" data-action="calculate">=</button>
+
+            </div>
+
+            <p class="rodape">Desenvolvido por Noé Balieiro</p>
+
+        </section>
+
+    </main>
+
+    <script src="calculadora.js"></script>
+
+</body>
+</html>

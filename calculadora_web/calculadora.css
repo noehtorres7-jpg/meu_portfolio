@@ -1,0 +1,192 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #020d1b;
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* CENTRALIZAÇÃO */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* CALCULADORA */
+
+.calculadora {
+    width: 100%;
+    max-width: 360px;
+    padding: 25px;
+    background: linear-gradient(145deg, #10223a, #071426);
+    border: 1px solid #1c4165;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00000070;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cabecalho h1 {
+    font-size: 26px;
+    color: #13baff;
+}
+
+.cabecalho p {
+    color: #a9bfd5;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* VISOR */
+
+.visor {
+    background: #020b16;
+    border: 1px solid #1c4165;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.operacao {
+    color: #8ba9c5;
+    font-size: 16px;
+    min-height: 24px;
+}
+
+.resultado {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: bold;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+
+/* BOTÕES */
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 62px;
+    border: none;
+    border-radius: 12px;
+    background: #162d48;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #25496c;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* BOTÕES ESPECIAIS */
+
+.especial {
+    background: #25415e;
+    color: #13baff;
+}
+
+.especial:hover {
+    background: #315779;
+}
+
+
+/* OPERADORES */
+
+.operador {
+    background: #07558a;
+    color: #ffffff;
+}
+
+.operador:hover {
+    background: #0879bd;
+}
+
+
+/* BOTÃO IGUAL */
+
+.igual {
+    background: #13baff;
+    color: #001426;
+}
+
+.igual:hover {
+    background: #65d5ff;
+}
+
+
+/* BOTÃO ZERO */
+
+.zero {
+    grid-column: span 2;
+}
+
+
+/* RODAPÉ */
+
+.rodape {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 12px;
+    color: #7892ad;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 400px) {
+
+    .calculadora {
+        padding: 18px;
+    }
+
+    button {
+        height: 55px;
+        font-size: 18px;
+    }
+
+    .resultado {
+        font-size: 29px;
+    }
+
+}

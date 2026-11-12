@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Tarefas</title>
+    <link rel="stylesheet" href="tarefa.css">
+</head>
+<body>
+
+    <main class="app">
+
+        <header class="topo">
+            <div>
+                <span class="etiqueta">ORGANIZAÇÃO PESSOAL</span>
+                <h1>Minhas <span>tarefas.</span></h1>
+                <p>Organize seu dia, uma tarefa de cada vez.</p>
+            </div>
+
+            <div class="resumo">
+                <strong id="total-tarefas">0</strong>
+                <span>tarefas no total</span>
+            </div>
+        </header>
+
+        <section class="painel">
+
+            <form id="form-tarefa" class="form-tarefa">
+                <input
+                    id="campo-tarefa"
+                    type="text"
+                    maxlength="100"
+                    placeholder="O que você precisa fazer?"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="btn-adicionar">
+                    + Adicionar
+                </button>
+            </form>
+
+            <div class="barra-filtros">
+                <button class="filtro ativo" data-filtro="todas">Todas</button>
+                <button class="filtro" data-filtro="pendentes">Pendentes</button>
+                <button class="filtro" data-filtro="concluidas">Concluídas</button>
+            </div>
+
+            <div class="linha-resumo">
+                <span id="texto-resumo">Você ainda não tem tarefas.</span>
+                <button id="limpar-concluidas" class="btn-texto">
+                    Limpar concluídas
+                </button>
+            </div>
+
+            <ul id="lista-tarefas" class="lista-tarefas"></ul>
+
+            <div id="estado-vazio" class="estado-vazio">
+                <div class="icone-vazio">✓</div>
+                <h2>Tudo organizado por aqui?</h2>
+                <p>Adicione uma tarefa acima para começar.</p>
+            </div>
+
+        </section>
+
+        <footer>
+            <span>Projeto de portfólio</span>
+            <span>Desenvolvido por <strong>Noé Balieiro</strong></span>
+        </footer>
+
+    </main>
+
+    <dialog id="dialog-edicao" class="dialog-edicao">
+        <form id="form-edicao">
+            <h2>Editar tarefa</h2>
+
+            <label for="campo-edicao">Descrição</label>
+            <input id="campo-edicao" type="text" maxlength="100" required>
+
+            <div class="acoes-dialogo">
+                <button type="button" id="cancelar-edicao" class="btn-cancelar">
+                    Cancelar
+                </button>
+
+                <button type="submit" class="btn-adicionar">
+                    Salvar
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="tarefa.js"></script>
+
+</body>
+</html>
